@@ -1,0 +1,109 @@
+/* My Events Page */
+.my-events-container {
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+  }
+  
+  .my-events-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .my-events-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .my-event-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .my-event-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .my-event-card-image {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .my-event-image-all {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .my-event-card-details {
+    padding: 15px;
+  }
+  
+  .my-event-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .my-event-club {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .my-event-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .my-event-time-venue {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .icon {
+    margin-right: 5px;
+    font-size: 1.1rem;
+  }
+  
+  .my-view-event-button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .my-view-event-button:hover {
+    background-color: #004d99;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

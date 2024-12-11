@@ -1,0 +1,72 @@
+.registration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.registration-overlay-content {
+    background-color: var(--card-bg, #fff);
+    color: var(--text-color, #000);
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Light Theme for Table Heading */
+.registration-overlay-content th {
+    background-color: var(--header-bg, #f5f5f5);
+    color: var(--header-text, #000);
+    font-weight: bold;
+}
+
+/* Dark Theme for Table Heading */
+.dark-theme th {
+    background-color: #333; /* Darker background for the heading */
+    color: #fff; /* Light text color for better readability */
+}
+
+/* Row Hover Effect */
+
+
+.dark-theme tr:hover {
+    background-color: #444; /* Darker hover effect for dark theme */
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}

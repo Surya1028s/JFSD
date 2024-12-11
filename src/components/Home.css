@@ -1,0 +1,176 @@
+.events-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .events-section h2 {
+    font-size: 1.8rem;
+    color: #1a3d7b;
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 1rem;
+  }
+  
+  .events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .event-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .event-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .event-details {
+    padding: 15px;
+  }
+  
+  .event-details h3 {
+    font-size: 1.2rem;
+    color: #1a3d7b;
+    margin-bottom: 10px;
+  }
+  
+  .event-details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .view-event-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1a3d7b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .view-event-button:hover {
+    background-color: #155a8a;
+    transform: scale(1.05);
+  }
+  
+  .welcome-message {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a3d7b;
+    transition: color 0.3s ease;
+  }
+  
+  .welcome-message:hover {
+    color: #155a8a;
+  }
+  .clubs-section {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .clubs-section h2 {
+    font-size: 1.8rem;
+    color: #1a3d7b;
+    margin-bottom: 20px;
+  }
+  
+  .clubs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .club-card {
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .club-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .club-details {
+    padding: 20px;
+  }
+  .club-details h3 {
+    font-size: 1.4rem;
+    color: #1a3d7b;
+    margin-bottom: 10px;
+  }
+  
+  .club-details p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .view-all-clubs {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1a3d7b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .view-all-clubs:hover {
+    background-color: #155a8a;
+    transform: scale(1.05);
+  }
+.view-club-button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1a3d7b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.view-club-button:hover {
+    background-color: #155a8a;
+    transform: scale(1.05);
+}

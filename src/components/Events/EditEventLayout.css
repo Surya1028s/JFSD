@@ -1,0 +1,154 @@
+/* General Styles */
+.edit-event-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Ensure overlay background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out; /* Smooth appearance */
+    opacity: 1;
+}
+
+.edit-event-overlay.hide {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.edit-event-container {
+    background-color: var(--background-color); /* Use the background-color variable */
+    color: var(--text-color); /* Use dynamic text color */
+    padding: 30px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling */
+    max-height: 90vh; /* Restrict modal height to screen */
+    transition: all 0.3s ease; /* Smooth transition for opening */
+}
+
+/* Dark and Light Theme Colors */
+:root {
+    --background-color-light: #ffffff;
+    --background-color-dark: #333333;
+    --text-color-light: #000000;
+    --text-color-dark: #ffffff;
+}
+
+body.dark-theme .edit-event-overlay,
+body.dark-theme .edit-event-container {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+}
+
+body.light-theme .edit-event-overlay,
+body.light-theme .edit-event-container {
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+}
+
+/* Modal Close Button */
+.edit-event-container .close-edit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--text-color); /* Ensure button color is dynamic */
+    cursor: pointer;
+}
+
+/* Input & Textarea Styles */
+.edit-event-container input,
+.edit-event-container textarea {
+    width: 48%; /* Two columns per row */
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.edit-event-container textarea {
+    height: 100px; /* Fixed height for better text area */
+}
+
+/* Layout for two columns per row */
+.edit-event-container .input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.edit-event-container .input-row input,
+.edit-event-container .input-row textarea {
+    width: 48%; /* Two columns per row */
+}
+
+/* Button Styles */
+.edit-event-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.edit-event-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Hover Effects */
+.edit-event-container input:hover,
+.edit-event-container textarea:hover,
+.edit-event-container button:hover {
+    border-color: #007bff;
+    transition: border-color 0.2s ease;
+}
+
+/* Modal Content */
+.edit-event-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Scrollable Area */
+.edit-event-container {
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+/* Ensure proper placement of inputs and textarea */
+.edit-event-container input,
+.edit-event-container textarea {
+    width: 100%; /* Fix for column layout */
+}
+
+.edit-event-container .input-row {
+    flex-direction: column;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* For small screens (mobile/tablet) */
+    .edit-event-container {
+        width: 90%;
+    }
+
+    .edit-event-container .input-row {
+        flex-direction: column;
+    }
+
+    .edit-event-container .input-row input,
+    .edit-event-container .input-row textarea {
+        width: 100%;
+    }
+}

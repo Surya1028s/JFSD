@@ -1,0 +1,684 @@
+/* General layout */
+.events-page {
+    padding: 20px;
+    color: var(--text-color);
+    background-color: var(--page-bg);
+  }
+  /* Spinner container */
+.events-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height to center vertically */
+    background-color: var(--page-bg); /* Match the page background */
+  }
+  
+  /* Heading for the events page */
+  .events-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  /* Stats container */
+  .events-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Stat box */
+  .events-stat-box {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .events-stat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .events-stat-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+  }
+  
+  .events-stat-box h3 {
+    margin: 5px 0 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  /* Events container */
+  .events-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next row if needed */
+    gap: 20px;
+    justify-content: center; /* Centers the cards */
+  }
+  
+  /* Event card */
+  .event-card {
+    position: relative; /* Required for dropdown menu positioning */
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Increased size */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Options icon */
+  .event-options-icon {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+    z-index: 10; /* Ensures menu icon stays above content */
+  }
+  
+  .event-options-icon:hover {
+    transform: rotate(90deg);
+  }
+  
+  /* Dropdown menu styling */
+  .event-menu {
+    z-index: 15; /* Ensures menu stays above the card and other content */
+  }
+  
+  .MuiMenu-paper {
+    margin-top: 35px; /* Adjusts dropdown position below the icon */
+    border-radius: 8px;
+  }
+  
+  /* Event image */
+  .event-image {
+    width: 100%;
+    height: 200px; /* Increased height */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    left:10px;
+  }
+  
+  /* Event name */
+  .event-name-event {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: var(--primary-color);
+  }
+  
+  /* Event description */
+  .event-description {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+  }
+  
+  /* Know More button */
+  .know-more-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .know-more-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+  
+  /* Dark and light theme variables */
+  :root {
+    --page-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+    --primary-color: #0000ff;
+    --secondary-text-color: #555555;
+    --border-color: #dddddd;
+  }
+  
+  [data-toolpad-color-scheme='dark'] {
+    --page-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #ffffff;
+    --primary-color: #87ceeb;
+    --secondary-text-color: #aaaaaa;
+    --border-color: #333333;
+  }
+
+ /* Add Event Button */
+.add-event-button {
+  display: block;
+  margin: 20px auto; /* Center the button below stats */
+  padding: 12px 30px;
+  background-color: #ffffff; /* White background for light theme */
+  color: var(--primary-color); /* Blue text */
+  border: 2px solid var(--primary-color); /* Blue border */
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-event-button:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  color: var(--primary-color); /* Maintain blue text */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+[data-toolpad-color-scheme='dark'] .add-event-button {
+  background-color: var(--card-bg); /* Dark background for dark theme */
+  color: #87ceeb; /* Light blue text */
+  border: 2px solid #87ceeb;
+}
+
+[data-toolpad-color-scheme='dark'] .add-event-button:hover {
+  background-color: #2a2a2a; /* Darker background on hover */
+  color: #87ceeb;
+}
+/* Event Details Modal - Overlay */
+.event-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);  /* Dark background to overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Event Details Container */
+.event-details-container {
+  background-color: var(--card-bg);  /* Background color for modal */
+  border-radius: 10px;
+  padding: 20px;
+  width: 50%;
+  max-width: 750px;
+  max-height: 80vh;  /* Ensure modal doesn't overflow */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;  /* Allow scrolling if content exceeds max-height */
+  transition: transform 0.3s ease;
+  transform: scale(0.95);  /* Initial scaling for smooth transition */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close Button */
+.close-details-button {
+  background: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+/* Event Details Title */
+.event-details-container h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Event Image Container */
+.event-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.event-details-image {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Details Body */
+.event-details-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Event Details Row */
+.event-details-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+/* Event Details Column */
+.event-details-col {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Event Detail (Text + Icon) */
+.event-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.event-detail:hover {
+  transform: scale(1.05);  /* Hover effect */
+}
+
+/* Event Icons */
+.event-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+/* Event Text */
+.event-detail span {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* Time Remaining (Clock Animation) */
+.event-ticking-clock {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.clock-animation {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  animation: ticking 1s linear infinite;
+}
+
+@keyframes ticking {
+  0% {
+    color: var(--primary-color);
+  }
+  50% {
+    color: #ff5733;
+  }
+  100% {
+    color: var(--primary-color);
+  }
+}
+
+/* Light and Dark Theme Styles */
+/* Events.css (Add this section) *//* Delete Confirmation Overlay */
+.delete-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Delete Confirmation Modal */
+.delete-confirmation-modal {
+  background-color: var(--modal-bg); /* Background color for the modal */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-color); /* Text color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.delete-confirmation-modal button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-confirmation-modal button:hover {
+  background-color: #d32f2f;
+}
+
+/* Light Theme */
+:root {
+  --modal-bg: white;
+  --text-color: #000000;
+}
+
+/* Dark Theme */
+[data-toolpad-color-scheme='dark'] {
+  --modal-bg: #333333;
+  --text-color: #ffffff;
+}
+
+[data-toolpad-color-scheme='dark'] .delete-confirmation-modal {
+  background-color: #444444; /* Darker modal background */
+}
+
+[data-toolpad-color-scheme='dark'] .delete-confirmation-modal button {
+  background-color: #ff5c5c; /* Lighter red for dark theme */
+}
+
+[data-toolpad-color-scheme='dark'] .delete-confirmation-modal button:hover {
+  background-color: #ff2a2a; /* Darker red on hover */
+}
+/* Edit Event Overlay Styles */
+.edit-event-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.edit-event-container {
+  background-color: var(--modal-bg);
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.edit-event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-event-header h2 {
+  margin: 0;
+}
+
+.edit-event-close-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.edit-event-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-event-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.edit-event-column {
+  width: 48%;
+}
+
+.edit-event-column input,
+.edit-event-column select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-event-column textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.edit-event-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+.edit-event-button:hover {
+  background-color: #45a049;
+}
+
+/* Dark Theme */
+[data-toolpad-color-scheme='dark'] {
+  --modal-bg: #333333;
+  --text-color: #ffffff;
+}
+
+[data-toolpad-color-scheme='dark'] .edit-event-container {
+  background-color: #444444;
+}
+
+[data-toolpad-color-scheme='dark'] .edit-event-column input,
+[data-toolpad-color-scheme='dark'] .edit-event-column select,
+[data-toolpad-color-scheme='dark'] .edit-event-column textarea {
+  background-color: #555555;
+  color: white;
+  border: 1px solid #666666;
+}
+
+[data-toolpad-color-scheme='dark'] .edit-event-button {
+  background-color: #ff9800;
+}
+
+[data-toolpad-color-scheme='dark'] .edit-event-button:hover {
+  background-color: #fb8c00;
+}
+/* Light Theme - Default */
+.viewStudents-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.viewStudents-container {
+  background-color: var(--modal-bg, #ffffff); /* Light theme background */
+  color: var(--text-color, #000000); /* Light theme text color */
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.viewStudents-close-button {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: var(--text-color, #000); /* Light theme text color */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.viewStudents-close-button:hover {
+  color: var(--primary-color, #007bff); /* Change color on hover */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.viewStudents-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.viewStudents-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color, #ddd); /* Light theme border color */
+}
+
+.viewStudents-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.viewStudents-info p {
+  margin: 0;
+}
+
+.viewStudents-unregister-icon {
+  margin-left: auto;
+  cursor: pointer;
+  color: var(--primary-color, #007bff);
+}
+
+.viewStudents-unregister-icon:hover {
+  color: #d9534f; /* Red on hover */
+}
+
+/* Dark Theme */
+[data-toolpad-color-scheme='dark'] .viewStudents-overlay {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+}
+
+[data-toolpad-color-scheme='dark'] .viewStudents-container {
+  background-color: var(--modal-bg, #333); /* Dark theme background */
+  color: var(--text-color, #ffffff); /* Dark theme text color */
+}
+
+[data-toolpad-color-scheme='dark'] .viewStudents-close-button {
+  color: var(--text-color, #ffffff); /* Light text color for dark theme */
+}
+
+[data-toolpad-color-scheme='dark'] .viewStudents-close-button:hover {
+  color: var(--primary-color, #87ceeb); /* Light blue on hover */
+}
+
+[data-toolpad-color-scheme='dark'] .viewStudents-unregister-icon {
+  color: var(--primary-color, #87ceeb);
+}
+
+[data-toolpad-color-scheme='dark'] .viewStudents-unregister-icon:hover {
+  color: #d9534f; /* Red on hover */
+}
+
+/* Other Styles - Theme-independent */
+.viewStudents-container {
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.viewStudents-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.viewStudents-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+.viewStudents-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.viewStudents-info p {
+  margin: 0;
+}
+.view-students-button{
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top:10px;
+
+}
+.view-students-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}

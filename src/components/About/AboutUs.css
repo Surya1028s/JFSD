@@ -1,0 +1,74 @@
+/* Container Styles */
+.about-us-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.about-us-header {
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease;
+}
+
+.about-us-header h1 {
+    font-size: 36px;
+    color: #1968c2;
+    margin-bottom: 10px;
+}
+
+.about-us-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Cards Section */
+.about-us-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-us-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-us-card h2 {
+    font-size: 24px;
+    color: #1968c2;
+    margin-bottom: 10px;
+}
+
+.about-us-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Animations */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

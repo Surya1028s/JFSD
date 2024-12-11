@@ -1,0 +1,348 @@
+/* .App {
+  text-align: center;
+} */
+
+.title {
+  color: black;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-size: 24px;
+  margin-right: auto; /* Pushes the title to the left */
+  cursor: pointer;
+}
+
+
+.App-logo {
+  height: 8vmin;
+  pointer-events: none;
+  margin-right: 20px;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  position: sticky; /* Makes the navbar sticky */
+  top: 0;           /* Sticks it to the top of the viewport */
+  z-index: 1000;    /* Ensures it stays above other elements */
+  background-color: transparent; /* Keep background transparent */
+  min-height: 9vh;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for visibility */
+  transition: background-color 0.3s ease; /* Optional: Smooth background transition */
+}
+
+/* Optional: Change navbar background when scrolling */
+.App-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9); /* Light background when scrolled */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-body{
+  min-height: 90vh;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  display: block;
+  align-items: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.intro-page {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+
+.welcome-message-container {
+  opacity: 0;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  height: 50px; /* Reduced height */
+  background: linear-gradient(45deg, #004c8c, #0080c0);
+  border-radius: 15px;
+  position: relative; /* Make sure it stays above the image */
+  transform: translateY(30px);
+  animation: welcomeMessageAnimation 1.5s forwards;
+  animation-delay: 0.5s; /* Updated delay to match quote disappearance */
+}
+
+@keyframes welcomeMessageAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-message {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  animation: textColorChange 5s infinite;
+}
+
+@keyframes textColorChange {
+  0% {
+    color: white;
+  }
+  50% {
+    color: lightblue;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.image {
+  opacity: 0;
+  width: 1200px;
+  height: 500px;
+  object-fit: contain;
+  margin-top: 20px;
+  animation: imageAnimation 1.5s forwards;
+  animation-delay: 1.5s;
+  
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}.input {
+  border-radius: 15px;
+  width: 400px; /* Improved usability */
+  height: 35px;
+  border: 2px solid black;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #66ccff; /* Light blue focus */
+  box-shadow: 0 0 8px rgba(102, 204, 255, 0.5);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes links to the right */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  margin: 0 15px;
+  position: relative; /* Required for pseudo-element */
+  transition: color 0.3s ease, transform 0.3s ease; /* Added smooth movement */
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px; /* Slightly thicker line */
+  background-color: rgb(235, 235, 235); /* Blue underline */
+  bottom: -5px; /* Positioned slightly below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease, height 0.3s ease; /* Smooth underline growth */
+}
+
+.navbar-link:hover {
+  color: blue; /* Text changes to blue */
+  transform: translateY(-5px); /* Moves upward slightly */
+}
+
+.navbar-link:hover::after {
+  width: 100%; /* Line expands fully on hover */
+  height: 5px; /* Line becomes thicker */
+}
+
+/* Active state styling (applies hover effects permanently) */
+.navbar-link.active {
+  color: blue; /* Matches hover color */
+  transform: translateY(-5px); /* Keeps the upward movement */
+}
+
+.navbar-link.active::after {
+  width: 100%; /* Fully expanded underline */
+  height: 5px; /* Thicker underline */
+}
+
+.tooltip-avatar {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item {
+  padding: 10px 20px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+}
+
+.menu-item:hover {
+  background-color: #1968c2;
+  color: white;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+.anticipated-events{
+  width:1200px;
+  margin:10px;
+  padding:10px;
+}
+.anticipated-events-header{
+  margin-bottom:40px;
+}
+.anticipated-events-header-title{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  display: inline-block;
+  margin-bottom: 0%;
+  margin-left: 50px;
+  font-weight: bold;
+}
+.anticipated-events-header-phrase{
+  margin-left:50px;
+  margin-top:0px;
+  font-style: oblique;
+}
+
+.anticipated-events-body{
+  margin-left: 50px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.anticipated-image{
+  width: 190px;
+  margin-right: 20px;
+}
+.anticipated-event-card{
+  width:1000px;
+  display: flex;
+  vertical-align: top;
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Space inside the card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* Background color */
+  margin: 16px;
+  transition: background-color 0.3s,transform 0.3s ease;
+}
+.anticipated-event-card:hover{
+  transform: translateY(-5px);
+  background-color: aliceblue;
+  cursor: pointer;
+}
+.event-title{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+.register{
+  height: 35px;
+  width: 120px;
+  border-radius: 5px;
+  background-color: rgb(7, 6, 6);
+  color: white;
+  border:none;
+  cursor: pointer;
+}
+.events-button{
+  height: 45px;
+  width: 200px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: rgb(156, 107, 155);
+  color: white;
+  border-color: #9900ff;
+  cursor: pointer;
+  margin-left:500px;
+  font-size: 20px; 
+  border-style: double;
+}
+.latest-events{
+  margin:10px;
+  padding:10px;
+}
+
+.latest-events-body{
+  margin-left: 60px;
+  display: flex;
+  margin-bottom: 40px;
+}
+.latest-events-card{
+  display: block;
+  width: 350px;
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Space inside the card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* Background color */
+  margin: 16px;
+  transition: background-color 0.3s, transform 0.3s ease;
+}
+.latest-events-card:hover{
+  background-color: aliceblue;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+.latest-image{
+  width: 220px;
+}
+.latest-event-title p{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom:10px;
+  margin-top:0px;
+}
+.know-more{
+  height: 45px;
+  width: 120px;
+  border-radius: 15px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border:none;
+  cursor: pointer;
+}
+/* Spinner container to center it on the screen */

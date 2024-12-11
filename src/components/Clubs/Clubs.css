@@ -1,0 +1,305 @@
+/* General styles */
+.Clubs {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Clubs-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    margin-bottom: 20px;
+}
+
+.Clubs-total {
+    background-color: var(--button-bg);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.add-club-button {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.add-club-button:hover {
+    background-color: var(--button-bg-hover);
+    color: #ffffff;
+}
+
+.save-club-button {
+    background-color: var(--button-bg);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.save-club-button:hover {
+    background-color: var(--button-bg-hover);
+}
+
+.Clubs-title p {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.Clubs-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Clubs-card {
+    border-radius: 8px;
+    width: calc(33% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.Clubs-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.Clubs-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Clubs-image-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Clubs-description {
+    padding: 15px;
+}
+
+.Club-name p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.Club-coordinator p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.Club-description-body p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 10px 0;
+}
+
+.view-club-button {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.view-club-button:hover {
+    background-color: var(--button-bg-hover);
+}
+
+/* Light Theme */
+[data-toolpad-color-scheme='light'] {
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --button-bg: #007bff;
+    --button-bg-hover: #0056b3;
+}
+
+/* Dark Theme */
+[data-toolpad-color-scheme='dark'] {
+    --card-background: #333333;
+    --text-color: #cccccc;
+    --button-bg: #007bff;
+    --button-bg-hover: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .Clubs-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .Clubs-card {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Overlay for View Club */
+.ClubOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.ClubOverlay-content {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+}
+/* Club Overlay Header */
+.ClubOverlay-header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.ClubOverlay-header button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.ClubOverlay-header button:hover {
+    color: var(--button-bg-hover);
+}
+
+.ClubOverlay-header i {
+    font-size: 24px;
+}
+
+
+.ClubOverlay-body {
+    margin-top: 60px;
+}
+
+.ClubOverlay-body label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.ClubOverlay-body input,
+.ClubOverlay-body textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.ClubOverlay-body textarea {
+    resize: vertical;
+}
+
+/* Scrollbar Styling */
+.ClubOverlay-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ClubOverlay-content::-webkit-scrollbar-thumb {
+    background-color: var(--button-bg);
+    border-radius: 5px;
+}
+
+.ClubOverlay-content::-webkit-scrollbar-track {
+    background-color: var(--card-background);
+}
+.AddClubOverlay, .ClubOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.AddClubOverlay-content, .ClubOverlay-content {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.AddClubOverlay input, textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+button {
+    cursor: pointer;
+}

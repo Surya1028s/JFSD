@@ -1,0 +1,202 @@
+/* Root Variables */
+:root {
+  --primary-color: #000000;
+  --hover-color: #383a3d;
+  --background-color: #f0f4f8;
+  --text-color: #333333;
+  --border-color: #cccccc;
+  --error-color: #e74c3c;
+  --success-color: #27ae60;
+  --transition-duration: 0.4s;
+}
+
+/* Main Login Page */
+.loginpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  max-width: 90%;
+  margin: 100px auto;
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: fade-in-scale 1s ease-out;
+}
+
+/* Title */
+.login-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  text-align: center;
+  animation: slide-down 0.8s ease-out;
+}
+
+/* Inputs */
+.login-input-class {
+  width: 100%;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: #ffffff;
+  transition: all var(--transition-duration) ease;
+}
+
+.login-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 6px rgba(74, 144, 226, 0.5);
+  outline: none;
+}
+
+/* Show Password */
+.show-password {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.show-password input {
+  margin-right: 8px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Forgot Password */
+.forgot-password {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.forgot-password a {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+
+.login-button:hover {
+  background: var(--hover-color);
+}
+
+/* Signup Link */
+.login-signup {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+  text-decoration: none;
+  animation: slide-up 0.8s ease-out;
+}
+
+.login-signup:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .loginpage {
+    padding: 30px;
+  }
+
+  .login-text {
+    font-size: 1.8rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
+  }
+
+  .login-signup {
+    font-size: 0.9rem;
+  }
+}
