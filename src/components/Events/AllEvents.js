@@ -13,7 +13,7 @@ const AllEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/events');
+        const response = await axios.get('https://jfsdbackend-production-f368.up.railway.app/events');
         setEvents(response.data);
       } catch (err) {
         setError('Failed to fetch events');

@@ -20,7 +20,7 @@ const ViewDashboard = () => {
 
   // Fetch total students
   useEffect(() => {
-    axios.get('http://localhost:8080/viewall')
+    axios.get('https://jfsdbackend-production-f368.up.railway.app/viewall')
       .then((response) => {
         setTotalStudents(response.data.length);
         setStudentsData(response.data); // Store student data for later use
@@ -32,7 +32,7 @@ const ViewDashboard = () => {
 
   // Fetch total events and students registered per event
   useEffect(() => {
-    axios.get('http://localhost:8080/events')
+    axios.get('https://jfsdbackend-production-f368.up.railway.app/events')
       .then((response) => {
         setTotalEvents(response.data.length);
         setEvents(response.data);
@@ -40,7 +40,7 @@ const ViewDashboard = () => {
         // Fetch registrations per event
         const eventNames = response.data.map(event => event.eventName);
         const registrationPromises = eventNames.map(eventName =>
-          axios.get(`http://localhost:8080/students-by-event?eventName=${eventName}`).then(res => res.data.length)
+          axios.get(`https://jfsdbackend-production-f368.up.railway.app/students-by-event?eventName=${eventName}`).then(res => res.data.length)
         );
 
         // When all registration data is fetched, update the chart
@@ -66,7 +66,7 @@ const ViewDashboard = () => {
   useEffect(() => {
     if (studentsData.length > 0) {
       const studentPromises = studentsData.map(student => 
-        axios.get(`http://localhost:8080/registered-events?email=${student.email}`).then(res => res.data)
+        axios.get(`https://jfsdbackend-production-f368.up.railway.app/registered-events?email=${student.email}`).then(res => res.data)
       );
       
       // Fetch registered events for each student

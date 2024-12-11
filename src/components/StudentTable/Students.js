@@ -55,7 +55,7 @@ const  Students =()=> {
   };
   const handleViewClick = (id) => () => {
     axios
-      .get(`http://localhost:8080/profile`,{
+      .get(`https://jfsdbackend-production-f368.up.railway.app/profile`,{
         params: { email: id },
       })
       .then((response) => {
@@ -95,7 +95,7 @@ const  Students =()=> {
     }
 
     axios
-      .post('http://localhost:8080/add', formData)
+      .post('https://jfsdbackend-production-f368.up.railway.app/add', formData)
       .then((response) => {
         const newRow = { 
           id: response.data.email, // Ensure the id is unique and set to email
@@ -125,7 +125,7 @@ const  Students =()=> {
       });
   };
   useEffect(() => {
-    axios.get('http://localhost:8080/viewall')
+    axios.get('https://jfsdbackend-production-f368.up.railway.app/viewall')
       .then(response => {
         setRows(response.data.map(student => ({
           id: student.email, // Use email as the unique id
@@ -149,7 +149,7 @@ const  Students =()=> {
     const student = rows.find((row) => row.id === id);
     
     axios
-      .put('http://localhost:8080/update', student)
+      .put('https://jfsdbackend-production-f368.up.railway.app/update', student)
       .then((response) => {
         console.log('Student updated:', response);
   
@@ -166,7 +166,7 @@ const  Students =()=> {
 
   const handleDeleteClick = (id) => () => {
     axios
-      .delete(`http://localhost:8080/delete?email=${id}`)
+      .delete(`https://jfsdbackend-production-f368.up.railway.app/delete?email=${id}`)
       .then(() => {
         setRows(rows.filter((row) => row.id !== id));
       })
@@ -177,7 +177,7 @@ const [eventsOverlayOpen, setEventsOverlayOpen] = useState(false);
 const handleRegisteredEventsClick = (row) => {
   setSelectedStudentEmail(row.email); // Capture email of the selected student
   axios
-    .get('http://localhost:8080/registered-events', {
+    .get('https://jfsdbackend-production-f368.up.railway.app/registered-events', {
       params: { email: row.email },
     })
     .then((response) => {
@@ -215,7 +215,7 @@ const closeEventsOverlay = () => {
 
   const handleRemoveRegistration = (email, eventName) => {
     axios
-      .delete('http://localhost:8080/unregister', {
+      .delete('https://jfsdbackend-production-f368.up.railway.app/unregister', {
         params: { email, eventname: eventName },
       })
       .then(() => {

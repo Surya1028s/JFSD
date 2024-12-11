@@ -56,7 +56,7 @@ function EditEventLayout({ event, onClose, onUpdate }) {
     });
 
     axios
-      .post('http://localhost:8080/update-event', formDataToSend)
+      .post('https://jfsdbackend-production-f368.up.railway.app/update-event', formDataToSend)
       .then((response) => {
         onUpdate(response.data); // Notify parent about the update
         onClose(); // Close the modal after updating

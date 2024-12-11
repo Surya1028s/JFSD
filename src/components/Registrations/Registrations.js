@@ -23,7 +23,7 @@ export default function RegistrationsTable() {
   useEffect(() => {
     // Fetch initial data
     axios
-      .get('http://localhost:8080/all-registrations')
+      .get('https://jfsdbackend-production-f368.up.railway.app/all-registrations')
       .then((response) => {
         const sortedData = response.data.map((reg) => ({
           id: reg.id,
@@ -61,7 +61,7 @@ export default function RegistrationsTable() {
 
   const handleDeleteClick = (id) => () => {
     axios
-      .delete(`http://localhost:8080/unregister?email=${rows.find(row => row.id === id).studentEmail}&eventname=${rows.find(row => row.id === id).eventName}`)
+      .delete(`https://jfsdbackend-production-f368.up.railway.app/unregister?email=${rows.find(row => row.id === id).studentEmail}&eventname=${rows.find(row => row.id === id).eventName}`)
       .then(() => {
         setRows(rows.filter((row) => row.id !== id));
         alert('Registration removed successfully!');

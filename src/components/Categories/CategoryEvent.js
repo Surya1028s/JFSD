@@ -20,7 +20,7 @@ const CategoryEvent = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get(`http://localhost:8080/category/${selectedCategory}`)
+            .get(`https://jfsdbackend-production-f368.up.railway.app/category/${selectedCategory}`)
             .then((response) => {
                 setEvents(response.data);
                 setLoading(false);

@@ -24,7 +24,7 @@ const Home = () => {
     // Fetch events from the API
     const fetchEvents = async () => {
       try {
-        const response = await fetch('http://localhost:8080/events');
+        const response = await fetch('https://jfsdbackend-production-f368.up.railway.app/events');
         if (!response.ok) {
           throw new Error('Failed to fetch events');
         }
@@ -38,7 +38,7 @@ const Home = () => {
     // Fetch clubs from the API
     const fetchClubs = async () => {
       try {
-        const response = await fetch('http://localhost:8080/viewclubs');
+        const response = await fetch('https://jfsdbackend-production-f368.up.railway.app/viewclubs');
         if (!response.ok) {
           throw new Error('Failed to fetch clubs');
         }

@@ -12,13 +12,13 @@ const ViewClubs = () => {
     }, []);
 
     const fetchClubs = () => {
-        axios.get('http://localhost:8080/viewclubs')
+        axios.get('https://jfsdbackend-production-f368.up.railway.app/viewclubs')
             .then((response) => setClubs(response.data))
             .catch((error) => console.error('Error fetching clubs:', error));
     };
 
     const handleViewClub = (clubName) => {
-        axios.get(`http://localhost:8080/view-club?clubName=${clubName}`)
+        axios.get(`https://jfsdbackend-production-f368.up.railway.app/view-club?clubName=${clubName}`)
             .then((response) => {
                 setSelectedClub(response.data);
                 setShowOverlay(true);

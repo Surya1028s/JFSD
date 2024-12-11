@@ -17,7 +17,7 @@ const EventDetails = () => {
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/viewevent?eventname=${eventname}`);
+        const response = await fetch(`https://jfsdbackend-production-f368.up.railway.app/viewevent?eventname=${eventname}`);
         if (!response.ok) {
           throw new Error('Event not found');
         }
@@ -31,7 +31,7 @@ const EventDetails = () => {
     const checkRegistrationStatus = async () => {
       if (studentEmail) {
         try {
-          const response = await axios.get(`http://localhost:8080/check-registration`, {
+          const response = await axios.get(`https://jfsdbackend-production-f368.up.railway.app/check-registration`, {
             params: {
               email: studentEmail,
               eventname: eventname,
@@ -57,7 +57,7 @@ const EventDetails = () => {
     }
 
     // Register the student
-    axios.post(`http://localhost:8080/register`, null, {
+    axios.post(`https://jfsdbackend-production-f368.up.railway.app/register`, null, {
       params: {
         email: studentEmail,
         eventname: eventname,
@@ -80,7 +80,7 @@ const EventDetails = () => {
     }
 
     // Unregister the student
-    axios.delete(`http://localhost:8080/unregister`, {
+    axios.delete(`https://jfsdbackend-production-f368.up.railway.app/unregister`, {
       params: {
         email: studentEmail,
         eventname: eventname,

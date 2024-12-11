@@ -27,7 +27,7 @@ function Events() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://localhost:8080/events')
+      .get('https://jfsdbackend-production-f368.up.railway.app/events')
       .then((response) => {
         setEvents(response.data);
         setLoading(false);
@@ -81,7 +81,7 @@ function Events() {
   const handleDeleteConfirmation = (confirm) => {
     if (confirm && eventToDelete) {
       axios
-        .delete(`http://localhost:8080/delete-event?eventName=${eventToDelete.eventName}`)
+        .delete(`https://jfsdbackend-production-f368.up.railway.app/delete-event?eventName=${eventToDelete.eventName}`)
         .then(() => {
           setEvents((prevEvents) => prevEvents.filter((event) => event.eventName !== eventToDelete.eventName));
         })
@@ -110,7 +110,7 @@ function Events() {
     }
   
     axios
-      .post('http://localhost:8080/update-event', formData, {
+      .post('https://jfsdbackend-production-f368.up.railway.app/update-event', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -141,7 +141,7 @@ function Events() {
     setFetchingStudents(true);
 
     axios
-      .get('http://localhost:8080/students-by-event', {
+      .get('https://jfsdbackend-production-f368.up.railway.app/students-by-event', {
         params: { eventName: event.eventName },
       })
       .then((response) => {
@@ -157,7 +157,7 @@ function Events() {
 
   const handleUnregisterStudent = (email) => {
     axios
-      .delete(`http://localhost:8080/unregister`, {
+      .delete(`https://jfsdbackend-production-f368.up.railway.app/unregister`, {
         params: { email, eventname: selectedEvent.eventName },
       })
       .then(() => {

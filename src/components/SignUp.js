@@ -36,7 +36,7 @@ const [initalOtp, setInitialOtp] = useState("");
     }
 
     axios
-      .post("http://localhost:8080/addstudent", {
+      .post("https://jfsdbackend-production-f368.up.railway.app/addstudent", {
         email,
         firstname,
         lastname,
@@ -73,7 +73,7 @@ const [initalOtp, setInitialOtp] = useState("");
   function sendOtp() {
     setIsLoading(true);
     axios
-      .post("http://localhost:8080/send-otp", { email })
+      .post("https://jfsdbackend-production-f368.up.railway.app/send-otp", { email })
       .then((res) => {
         setInitialOtp(res.data.otp);
         setIsOtpSent(true);

@@ -33,7 +33,7 @@ const AddEventOverlay = ({ open, onClose, onEventAdded }) => {
   // Fetch club names when the component mounts
   useEffect(() => {
     axios
-      .get("http://localhost:8080/names")
+      .get("https://jfsdbackend-production-f368.up.railway.app/names")
       .then((response) => {
         setClubNames(response.data);
       })
@@ -58,7 +58,7 @@ const AddEventOverlay = ({ open, onClose, onEventAdded }) => {
     });
 
     axios
-      .post("http://localhost:8080/addevent", formData)
+      .post("https://jfsdbackend-production-f368.up.railway.app/addevent", formData)
       .then((response) => {
         onEventAdded(response.data);
         onClose();
